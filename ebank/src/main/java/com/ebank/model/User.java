@@ -1,5 +1,6 @@
 package com.ebank.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -20,5 +21,6 @@ public class User {
     private String city;
 
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Account> accounts;
 }

@@ -1,6 +1,7 @@
 package com.ebank.model;
 
 import com.ebank.enums.BankName;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -22,8 +23,9 @@ public class Beneficiary {
     private BankName bank;
 
     @ManyToOne
+    @JsonIgnore
     private Account account;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Transaction> transactions;
 }

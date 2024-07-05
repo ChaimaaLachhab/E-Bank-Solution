@@ -26,22 +26,22 @@ public class AccountController {
         return accountService.createAccount(userId, account);
     }
 
-    @PutMapping("/update/{userId}")
+    @PutMapping("/update/{accountId}")
     public Account updateAccount(@PathVariable Long accountId, @RequestBody Account account) {
         return accountService.updateAccount(accountId, account);
     }
 
-    @DeleteMapping("/delete/{userId}")
+    @DeleteMapping("/delete/{accountId}")
     public void deleteAccount(@PathVariable Long accountId) {
         accountService.deleteAccount(accountId);
     }
 
-    @PutMapping("/close/{userId}")
-    public void closeAccount(@PathVariable Long accountId, @PathVariable String raisonClosing) {
+    @PutMapping("/close/{accountId}")
+    public void closeAccount(@PathVariable Long accountId, @RequestBody String raisonClosing) {
         accountService.closeAccount(accountId, raisonClosing);
     }
 
-    @GetMapping("/balance/{userId}")
+    @GetMapping("/balance/{accountId}")
     public double  getBalance(@PathVariable Long accountId){
         return accountService.getAccountBalance(accountId);
     }

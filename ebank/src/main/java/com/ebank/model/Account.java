@@ -6,6 +6,7 @@ import lombok.*;
 import jakarta.persistence.*;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -29,17 +30,13 @@ public class Account {
     @JsonIgnore
     private User user;
 
-    @OneToMany
-    private List<Transaction> transactions;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Transaction> transactions = new ArrayList<>();;
 
-    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY)
-    private List<BankCard> bankCards;
+    @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<BankCard> bankCards = new ArrayList<>();;
 
-    @OneToMany
-    private List<Beneficiary> beneficiaries;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Beneficiary> beneficiaries = new ArrayList<>();;
 
-    public void addBankCard(BankCard bankCard) {
-        bankCards.add(bankCard);
-        bankCard.setAccount(this);
-    }
 }

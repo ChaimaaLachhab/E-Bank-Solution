@@ -15,23 +15,24 @@ public class BeneficiaryController {
     @Autowired
     private BeneficiaryService beneficiaryService;
 
-    @GetMapping
-    public List<Beneficiary> getAllBeneficiaries() {
-        return beneficiaryService.getAllBeneficiaries();
+    @GetMapping("/all/{accountId}")
+    public List<Beneficiary> getAllBeneficiaries(@PathVariable Long accountId) {
+        return beneficiaryService.getAllBeneficiaries(accountId);
     }
 
-    @PostMapping
-    public Beneficiary createAccount(@PathVariable Long accountId, @RequestBody Beneficiary beneficiary) {
-        return beneficiaryService.saveBeneficiary(accountId, beneficiary);
+    @PostMapping("/add/{accountId}")
+    public Beneficiary addBeneficiary(@PathVariable Long accountId, @RequestBody Beneficiary beneficiary) {
+        return beneficiaryService.UpdateBeneficiary(accountId, beneficiary);
     }
 
-    @PutMapping
-    public Beneficiary updateAccount(@PathVariable Long benefeciaryId, @RequestBody Beneficiary beneficiary) {
-        return beneficiaryService.saveBeneficiary(benefeciaryId, beneficiary);
+    @PutMapping("/update/{beneficiaryId}")
+    public Beneficiary updateBeneficiary(@PathVariable Long beneficiaryId, @RequestBody Beneficiary beneficiary) {
+        beneficiary.setId(beneficiaryId);
+        return beneficiaryService.saveBeneficiary(beneficiary);
     }
 
-    @DeleteMapping
-    public void deleteAccount(@PathVariable Long benefeciaryId) {
-        beneficiaryService.deleteBeneficiary(benefeciaryId);
+    @DeleteMapping("/delete/{beneficiaryId}")
+    public void deleteBeneficiary(@PathVariable Long beneficiaryId) {
+        beneficiaryService.deleteBeneficiary(beneficiaryId);
     }
 }

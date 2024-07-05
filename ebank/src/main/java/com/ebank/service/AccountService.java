@@ -26,23 +26,29 @@ public class AccountService {
     private BankCardService bankCardService;
 
     @Autowired
-    private UserService userService;
+    private UserRepository userRepository;
 
     public List<Account> getAllAccounts(Long userId) {
         return accountRepository.findAllAccountsByUserId(userId);
     }
 
     public Account createAccount(Long userId, Account account) {
-        User user = userService.getUserById(userId);
+
+        User user = userRepository.findById(userId) .orElseThrow(() -> new IllegalArgumentException("User not found"));
+
+        if (user.getAccounts().stream().anyMatch(acc -> acc.getAccountType() == account.getAccountType())) {
+            throw new IllegalArgumentException("An account of this type already exists for this user.");
+        }
+
         account.setUser(user);
         account.setAccountNumber(generateAccountNumber());
         account.setDateCreation(new Date(System.currentTimeMillis()));
 
         accountRepository.save(account);
 
-        BankCard bankCard = bankCardService.addBankCard(user, account);
+        BankCard bankCard = bankCardService.addDefaultBankCard(account);
 
-        account.addBankCard(bankCard);
+        account.getBankCards().add(bankCard);
 
         accountRepository.save(account);
 
@@ -85,5 +91,9 @@ public class AccountService {
 
     public  void deleteAccount(Long accountId) {
         accountRepository.deleteById(accountId);
+    }
+
+    public Account getAccountById(Long accountId) {
+        return accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("Account not found"));
     }
 }
