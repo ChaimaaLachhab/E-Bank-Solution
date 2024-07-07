@@ -1,13 +1,10 @@
 package com.ebank.model;
 
 import com.ebank.enums.Status;
-import com.ebank.enums.Type;
+import com.ebank.enums.CardType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import jakarta.persistence.*;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.sql.Date;
 
 @Getter
 @Setter
@@ -21,7 +18,8 @@ public class BankCard {
     private String cardNumber;
     private String expirationDate;
     @Enumerated(EnumType.STRING)
-    private Type cardType;
+    private CardType cardType;
+    @Enumerated(EnumType.STRING)
     private Status status;
     private String blockRaison;
 

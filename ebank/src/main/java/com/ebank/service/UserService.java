@@ -1,5 +1,6 @@
 package com.ebank.service;
 
+import com.ebank.exception.UserNotFoundException;
 import com.ebank.model.User;
 import com.ebank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UserService {
     }
 
     public User getUserById(Long id) {
-        return userRepository.findById(id).orElse(null);
+        return userRepository.findById(id).orElseThrow(UserNotFoundException::new);
     }
 
     public User saveUser(User user) {

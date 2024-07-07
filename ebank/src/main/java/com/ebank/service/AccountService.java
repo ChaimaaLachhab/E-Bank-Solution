@@ -1,13 +1,12 @@
 package com.ebank.service;
 
-import com.ebank.enums.AccountType;
-import com.ebank.enums.Type;
+import com.ebank.exception.AccountAlreadyExistsException;
+import com.ebank.exception.AccountNotFoundException;
+import com.ebank.exception.NonZeroBalanceException;
 import com.ebank.model.Account;
 import com.ebank.model.BankCard;
-import com.ebank.model.Transaction;
 import com.ebank.model.User;
 import com.ebank.repository.AccountRepository;
-import com.ebank.repository.BankCardRepository;
 import com.ebank.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,7 +36,7 @@ public class AccountService {
         User user = userRepository.findById(userId) .orElseThrow(() -> new IllegalArgumentException("User not found"));
 
         if (user.getAccounts().stream().anyMatch(acc -> acc.getAccountType() == account.getAccountType())) {
-            throw new IllegalArgumentException("An account of this type already exists for this user.");
+            throw new AccountAlreadyExistsException();
         }
 
         account.setUser(user);
@@ -66,16 +65,16 @@ public class AccountService {
 
     public double getAccountBalance(Long accountId) {
         Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+                .orElseThrow(AccountNotFoundException::new);
         return account.getBalance();
     }
 
     public void closeAccount(Long accountId, String raisonClosing) {
         Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+                .orElseThrow(AccountNotFoundException::new);
 
         if (account.getBalance() != 0) {
-            throw new IllegalStateException("Account balance must be zero before closing.");
+            throw new NonZeroBalanceException();
         }
 
         account.setAccountClosed(true);
@@ -85,8 +84,10 @@ public class AccountService {
     }
 
     public Account updateAccount(Long accountId, Account account) {
-        account.setId(accountId);
-        return accountRepository.save(account);
+        Account account_1 = accountRepository.findById(accountId)
+                .orElseThrow(AccountNotFoundException::new);
+        account_1.setBalance(account.getBalance());
+        return accountRepository.save(account_1);
     }
 
     public  void deleteAccount(Long accountId) {
@@ -94,6 +95,6 @@ public class AccountService {
     }
 
     public Account getAccountById(Long accountId) {
-        return accountRepository.findById(accountId).orElseThrow(() -> new IllegalArgumentException("Account not found"));
+        return accountRepository.findById(accountId).orElseThrow(AccountNotFoundException::new);
     }
 }

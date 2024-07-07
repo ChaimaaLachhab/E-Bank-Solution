@@ -22,7 +22,7 @@ public class BeneficiaryController {
 
     @PostMapping("/add/{accountId}")
     public Beneficiary addBeneficiary(@PathVariable Long accountId, @RequestBody Beneficiary beneficiary) {
-        return beneficiaryService.UpdateBeneficiary(accountId, beneficiary);
+        return beneficiaryService.updateBeneficiary(accountId, beneficiary);
     }
 
     @PutMapping("/update/{beneficiaryId}")

@@ -20,7 +20,7 @@ public class Beneficiary {
     private String name;
     private String rib;
     @Enumerated(EnumType.STRING)
-    private BankName bank;
+    private BankName bankName;
 
     @ManyToOne
     @JsonIgnore

@@ -1,6 +1,6 @@
 package com.ebank.enums;
 
-public enum Type {
+public enum CardType {
     CREDIT,
     DEBIT
 }

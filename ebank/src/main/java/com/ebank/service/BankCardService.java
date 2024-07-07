@@ -1,19 +1,17 @@
 package com.ebank.service;
 
+import com.ebank.enums.AccountType;
 import com.ebank.enums.Status;
-import com.ebank.enums.Type;
+import com.ebank.enums.CardType;
+import com.ebank.exception.*;
 import com.ebank.model.Account;
 import com.ebank.model.BankCard;
-import com.ebank.model.User;
 import com.ebank.repository.AccountRepository;
 import com.ebank.repository.BankCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
@@ -27,11 +25,17 @@ public class BankCardService {
     @Autowired
     private AccountRepository accountRepository;
 
+
+public List<BankCard> getAllBankCards(Long accountId) {
+    return bankCardRepository.findAllByAccountId(accountId);
+}
+
+
     public BankCard addDefaultBankCard(Account account) {
         BankCard bankCard = new BankCard();
         bankCard.setCardNumber(generateCardNumber());
         bankCard.setExpirationDate(generateExpirationDate(5));
-        bankCard.setCardType(Type.DEBIT);
+        bankCard.setCardType(CardType.DEBIT);
         bankCard.setStatus(Status.ACTIVATE);
         bankCard.setAccount(account);
 
@@ -42,12 +46,16 @@ public class BankCardService {
 
     public BankCard addBankCard(Long accountId, BankCard bankCard) {
         Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+                .orElseThrow(AccountNotFoundException::new);
 
         boolean cardExists = account.getBankCards().stream() .anyMatch(card -> card.getCardType() == bankCard.getCardType());
 
+        if (account.getAccountType() == AccountType.SAVING && bankCard.getCardType() == CardType.CREDIT) {
+            throw new CardNotAllowedForSavingsException();
+        }
+
         if (cardExists) {
-            throw new IllegalArgumentException("A card of the same type already exists for this account.");
+            throw new CardAlreadyExistsException();
         }
 
         bankCard.setCardNumber(generateCardNumber());
@@ -76,30 +84,34 @@ public class BankCardService {
         return expirationDate.format(format);
     }
 
-    public BankCard getBankCard(Long accountId) {
-        return
-    }
+    public BankCard activateOrDeactivateBankCard(Long bankCardId, boolean activate) {
+        BankCard bankCard = bankCardRepository.findById(bankCardId)
+                .orElseThrow(BankCardNotFoundException::new);
 
-    public void closeAccount(Long accountId, String raisonClosing) {
-        Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
-
-        if (account.getBalance() != 0) {
-            throw new IllegalStateException("Account balance must be zero before closing.");
+        if (activate) {
+            bankCard.setStatus(Status.ACTIVATE);
+        } else {
+            bankCard.setStatus(Status.DEACTIVATE);
         }
 
-        account.setAccountClosed(true);
-        account.setRaisonClosing(raisonClosing);
-
-        accountRepository.save(account);
+        bankCardRepository.save(bankCard);
+        return bankCard;
     }
+
     public BankCard blockBankCard(Long bankCardId, String blockRaison) {
-        BankCard bankCard = bankCardRepository.findById(bankCardId).orElseThrow(() -> new IllegalArgumentException("Bank card not found"));
-        if (blockRaison.trim().equals("")) {
-            throw new IllegalArgumentException("Block raison cannot be empty.");
+        BankCard bankCard = bankCardRepository.findById(bankCardId)
+                .orElseThrow(BankCardNotFoundException::new);
+
+        if (blockRaison == null || blockRaison.trim().isEmpty()) {
+            throw new BlockReasonEmptyException();
         }
-        bankCard.setStatus(Status.BLOCK);
-        bankCard.setBlockRaison(blockRaison);
-        return bankCardRepository.save(bankCard);
+
+        if (bankCard.getStatus() != Status.BLOCK) {
+            bankCard.setStatus(Status.BLOCK);
+            bankCard.setBlockRaison(blockRaison);
+            return bankCardRepository.save(bankCard);
+        } else {
+            throw new BankCardAlreadyBlockedException();
+        }
     }
 }

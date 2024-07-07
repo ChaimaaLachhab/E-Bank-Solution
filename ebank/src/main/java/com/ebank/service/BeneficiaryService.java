@@ -1,5 +1,7 @@
 package com.ebank.service;
 
+import com.ebank.exception.AccountNotFoundException;
+import com.ebank.exception.BeneficiaryNotFoundException;
 import com.ebank.model.Account;
 import com.ebank.model.Beneficiary;
 import com.ebank.repository.AccountRepository;
@@ -23,7 +25,7 @@ public class BeneficiaryService {
     }
 
     public Beneficiary getBeneficiaryById(Long id) {
-        return beneficiaryRepository.findById(id).orElse(null);
+        return beneficiaryRepository.findById(id).orElseThrow(BeneficiaryNotFoundException::new);
     }
 
     public Beneficiary saveBeneficiary(Beneficiary beneficiary) {
@@ -31,9 +33,9 @@ public class BeneficiaryService {
         return beneficiaryRepository.save(beneficiary);
     }
 
-    public Beneficiary UpdateBeneficiary(Long accountId, Beneficiary beneficiary) {
+    public Beneficiary updateBeneficiary(Long accountId, Beneficiary beneficiary) {
         Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new IllegalArgumentException("Account not found"));
+                .orElseThrow(AccountNotFoundException::new);
         beneficiary.setAccount(account);
         return beneficiaryRepository.save(beneficiary);
     }
