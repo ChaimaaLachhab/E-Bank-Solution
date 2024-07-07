@@ -6,18 +6,19 @@ Ce projet constitue le backend de l'application e-bank de Bank Solutions, permet
 
 ## Table des Matières
 
-- [Fonctionnalités](#fonctionnalités)
-- [Structure du Projet](#structure-du-projet)
-- [Classes de l'Application e-Banking](#classes-de-lapplication-e-banking)
-- [Énumérations de l'Application e-Banking](#énumérations-de-lapplication-e-banking)
-- [Exceptions de l'Application e-Banking](#exceptions-de-lapplication-e-banking)
-- [Responsabilités des Méthodes de l'Application e-Banking](#responsabilités-des-méthodes-de-lapplication-e-banking)
-- [Instructions d'Utilisation](#instructions-dutilisation)
-- [Utilisation](#utilisation)
-- [Technologies Utilisées](#technologies-utilisées)
-- [Prérequis](#prérequis)
-- [Installation et Configuration](#installation-et-configuration)
-- [Auteur](#auteur)
+- [Fonctionnalités](#2-fonctionnalités)
+- [Structure du Projet](#3-structure-du-projet)
+- [Classes de l'Application e-Banking](#4-les-classes-de-lapplication-e-banking)
+- [Énumérations de l'Application e-Banking](#5-les-énumérations-de-lapplication-e-banking)
+- [Exceptions de l'Application e-Banking](#6-les-exceptions-de-lapplication-e-banking)
+- [Responsabilités des Méthodes de l'Application e-Banking](#7-les-responsabilités-des-méthodes-de-lapplication-e-banking)
+- [Instructions d'Utilisation](#8-instructions-dutilisation)
+- [Utilisation](#9-utilisation)
+- [Technologies Utilisées](#10-technologies-utilisées)
+- [Prérequis](#11-prérequis)
+- [Installation et Configuration](#12-installation-et-configuration)
+- [Auteur](#13-auteur)
+
 
 
 ## 2. Fonctionnalités
