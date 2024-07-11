@@ -120,6 +120,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>ebank-application.jar</finalName>
 	</build>
 
 </project>
