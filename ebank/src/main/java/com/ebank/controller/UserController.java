@@ -3,6 +3,9 @@ package com.ebank.controller;
 import com.ebank.model.User;
 import com.ebank.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,5 +37,21 @@ public class UserController {
     @PutMapping("/update/{id}")
     public void updateUser(@PathVariable Long id, @RequestBody User user) {
         userService.updateUser(id, user);
+    }
+
+    @GetMapping("/me")
+    public ResponseEntity<User> authenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        User currentUser = (User) authentication.getPrincipal();
+
+        return ResponseEntity.ok(currentUser);
+    }
+
+    @GetMapping("/")
+    public ResponseEntity<List<User>> allUsers() {
+        List <User> users = userService.getAllUsers();
+
+        return ResponseEntity.ok(users);
     }
 }
