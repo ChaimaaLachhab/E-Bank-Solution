@@ -34,6 +34,15 @@ public class User implements UserDetails {
     @JsonIgnore
     private List<Account> accounts;
 
+    public User(long id, String fullName, String phone, String address, String city, Account account) {
+        this.id = id;
+        this.fullName = fullName;
+        this.phone = phone;
+        this.address = address;
+        this.city = city;
+        this.setAccounts(this.accounts);
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of();
