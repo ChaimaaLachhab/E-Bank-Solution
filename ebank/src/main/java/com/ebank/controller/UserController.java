@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/user")
 public class UserController {
 
@@ -20,23 +20,27 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/all")
-    public List<User> getAllUsers() {
-        return userService.getAllUsers();
+    public ResponseEntity<List<User>> getAll() {
+        List<User> users = userService.getAllUsers();
+        return ResponseEntity.ok(users);
     }
 
     @PostMapping("/add")
-    public void addUser(@RequestBody User user) {
+    public ResponseEntity<User> add(@RequestBody User user) {
         userService.saveUser(user);
+        return ResponseEntity.ok(user);
     }
 
     @DeleteMapping("/delete/{id}")
-    public void deleteUser(@PathVariable Long id) {
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
         userService.deleteUser(id);
+        return ResponseEntity.ok().build();
     }
 
     @PutMapping("/update/{id}")
-    public void updateUser(@PathVariable Long id, @RequestBody User user) {
+    public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User user) {
         userService.updateUser(id, user);
+        return ResponseEntity.ok(user);
     }
 
     @GetMapping("/me")
@@ -51,7 +55,6 @@ public class UserController {
     @GetMapping("/")
     public ResponseEntity<List<User>> allUsers() {
         List <User> users = userService.getAllUsers();
-
         return ResponseEntity.ok(users);
     }
 }
