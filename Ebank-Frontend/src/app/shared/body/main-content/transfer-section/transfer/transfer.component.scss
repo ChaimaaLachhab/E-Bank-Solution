@@ -1,0 +1,81 @@
+.transfer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 0.875rem;
+}
+@media (max-width: 1000px) {
+  .transfer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+.transfer + * {
+  margin-top: 2rem;
+}
+
+.transfer-logo {
+  background-color: var(--c-gray-200);
+  border-radius: 4px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transfer-logo img {
+  width: 45%;
+}
+
+.transfer-details {
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+@media (max-width: 1000px) {
+  .transfer-details {
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+.transfer-details div {
+  width: calc(100% / 3 - 1rem);
+}
+@media (max-width: 1000px) {
+  .transfer-details div {
+    width: 100%;
+  }
+}
+.transfer-details div + div {
+  margin-left: 1rem;
+}
+@media (max-width: 1000px) {
+  .transfer-details div + div {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}
+.transfer-details dd {
+  color: var(--c-text-tertiary);
+  margin-top: 2px;
+}
+
+.transfer-number {
+  margin-left: 2rem;
+  font-size: 1.125rem;
+  flex-shrink: 0;
+  width: 15%;
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 1000px) {
+  .transfer-number {
+    margin-left: 0;
+    margin-top: 1.25rem;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

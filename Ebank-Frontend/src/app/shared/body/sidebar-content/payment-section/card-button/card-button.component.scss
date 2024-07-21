@@ -1,0 +1,22 @@
+.card-button {
+  display: flex;
+  width: 50px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: transparent;
+  transition: 0.25s ease;
+  border-radius: 4px;
+  border: 2px solid var(--c-gray-600);
+  color: var(--c-text-primary);
+  cursor: pointer;
+}
+.card-button.mastercard svg {
+  max-height: 15px;
+}
+.card-button:focus, .card-button:hover, .card-button.active {
+  color: var(--c-gray-800);
+  background-color: var(--c-white);
+  border-color: var(--c-white);
+}

@@ -5,6 +5,7 @@ import com.ebank.model.User;
 import com.ebank.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -37,6 +38,12 @@ public class AccountController {
         return ResponseEntity.ok(account_);
     }
 
+    @GetMapping("/get/{accountId}")
+    public ResponseEntity<Account> findAccount(@PathVariable Long accountId) {
+        Account account = accountService.getAccountById(accountId);
+        return ResponseEntity.ok(account);
+    }
+
     @PutMapping("/update/{accountId}")
     public ResponseEntity<Account> updateAccount(@PathVariable Long accountId, @RequestBody Account account) {
         Account account_ = accountService.updateAccount(accountId, account);
@@ -51,9 +58,15 @@ public class AccountController {
 
     @PutMapping("/close/{accountId}")
     public ResponseEntity<Void> closeAccount(@PathVariable Long accountId, @RequestBody String raisonClosing) {
-        accountService.closeAccount(accountId, raisonClosing);
-        return ResponseEntity.noContent().build();
+        try {
+            accountService.closeAccount(accountId, raisonClosing);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
+
 
     @GetMapping("/balance/{accountId}")
     public ResponseEntity<Double> getBalance(@PathVariable Long accountId){

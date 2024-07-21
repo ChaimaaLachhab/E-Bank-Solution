@@ -1,0 +1,6 @@
+<div class="overlay" *ngIf="isVisible">
+  <div class="overlay-content">
+    <router-outlet></router-outlet>
+    <button (click)="close()">Close</button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+
+  <div *ngIf="accounts.length > 0; else noAccounts">
+    <div *ngFor="let account of accounts" class="account">
+      <div [ngClass]="getAccountTypeClass(account.accountType)">
+        <h2>{{ account.accountType.toUpperCase() }}</h2>
+      </div>
+      <div class="account-details">
+        <h3>{{ account.accountType }}</h3>
+        <div>
+          <span>{{ account.balance | currency }}</span>
+          <button class="icon-button" (click)="openUpdateAccount(account.id)">
+            <i class="ph-pencil-bold"></i>
+          </button>
+
+          <button class="icon-button" (click)="openCloseAccountDialog(account.id)">
+            <i class="ph-x-bold"></i>
+          </button>
+          <button class="icon-button">
+            <i class="ph-caret-right-bold"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noAccounts>
+    <p>No accounts available.</p>
+  </ng-template>

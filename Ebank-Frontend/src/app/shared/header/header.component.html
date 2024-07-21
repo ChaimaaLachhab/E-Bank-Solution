@@ -1,0 +1,37 @@
+<header class="app-header">
+  <app-logo></app-logo>
+  <div class="app-header-navigation" [class.open]="isOpen">
+    <div class="tabs">
+      <a href="#" [class.active]="activeTab === 'overview'" (click)="setActiveTab('overview')">
+        Overview
+      </a>
+      <a href="#" [class.active]="activeTab === 'payments'" (click)="setActiveTab('payments')">
+        Payments
+      </a>
+      <a href="#" [class.active]="activeTab === 'cards'" (click)="setActiveTab('cards')">
+        Cards
+      </a>
+      <a href="#" [class.active]="activeTab === 'account'" (click)="setActiveTab('account')">
+        Account
+      </a>
+      <a href="#" [class.active]="activeTab === 'system'" (click)="setActiveTab('system')">
+        System
+      </a>
+      <a href="#" [class.active]="activeTab === 'business'" (click)="setActiveTab('business')">
+        Business
+      </a>
+    </div>
+    <div class="app-header-actions">
+      <app-user-profile></app-user-profile>
+      <div class="app-header-actions-buttons">
+        <app-logout></app-logout>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-header-mobile">
+    <button class="icon-button large" (click)="toggleNavigation()">
+      <i class="ph-list"></i>
+    </button>
+  </div>
+</header>
