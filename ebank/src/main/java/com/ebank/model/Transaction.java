@@ -4,6 +4,7 @@ package com.ebank.model;
 import com.ebank.enums.TransactionType;
 import com.ebank.enums.CardType;
 import com.ebank.enums.TransferType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import jakarta.persistence.*;
 
@@ -28,8 +29,10 @@ public class Transaction {
     private String targetAccountNumber;
 
     @ManyToOne
+    @JsonIgnore
     private Account account;
 
     @ManyToOne
+    @JsonIgnore
     private Beneficiary beneficiary;
 }

@@ -32,5 +32,6 @@ export class OverlayComponent implements OnInit {
 
   close() {
     this.overlayService.hide();
+    this.router.navigate(['/dashboard']);
   }
 }

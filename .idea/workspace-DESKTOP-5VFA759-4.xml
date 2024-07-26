@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8284f574-2722-4e85-a18e-259936c595a0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-detail/account-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-detail/account-detail.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-detail/account-detail.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-detail/account-detail.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-detail/account-detail.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-detail/account-detail.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-detail/account-detail.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-detail/account-detail.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-form/account-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-form/account-form.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-form/account-form.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-form/account-form.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-form/account-form.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-form/account-form.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-form/account-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-form/account-form.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-list/account-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-list/account-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-list/account-list.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-list/account-list.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-list/account-list.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-list/account-list.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/account-list/account-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/account-list/account-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dashboard/dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/shared/dashboard/dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dashboard/dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/shared/dashboard/dashboard.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dashboard/dashboard.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/shared/dashboard/dashboard.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dashboard/dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/shared/dashboard/dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dto/login-user.dto.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/dto/login-user.dto.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dto/login-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/dto/login-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dto/register-user.dto.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/dto/register-user.dto.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dto/register-user.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/dto/register-user.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dto/transfer-request.dto.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/dto/transfer-request.dto.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/dto/transfer-request.dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/dto/transfer-request.dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/enum/account-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/enum/account-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/enum/bank-name.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/enum/bank-name.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/enum/card-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/enum/card-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/enum/status.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/enum/status.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/enum/transaction-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/enum/transaction-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/enum/transfer-type.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/enum/transfer-type.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/login/login.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/login/login.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/login/login.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/login/login.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/account/account.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/account/account.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/account/account.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/account/account.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/bank-card/bankcard.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/bank-card/bankcard.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/bank-card/bankcard.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/bank-card/bankcard.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/beneficiary/beneficiary.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/beneficiary/beneficiary.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/beneficiary/beneficiary.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/beneficiary/beneficiary.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/login-response/login-response.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/login-response/login-response.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/login-response/login-response.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/login-response/login-response.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/transaction/transaction.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/transaction/transaction.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/transaction/transaction.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/transaction/transaction.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/user/user.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/user/user.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/model/user/user.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/model/user/user.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/password-reset/password-reset.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/password-reset/password-reset.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/password-reset/password-reset.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/password-reset/password-reset.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/password-reset/password-reset.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/password-reset/password-reset.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/password-reset/password-reset.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/password-reset/password-reset.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/registration/registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/registration/registration.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/registration/registration.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/registration/registration.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/registration/registration.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/registration/registration.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/features/registration/registration.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/account/account.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/account/account.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/account/account.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/account/account.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/auth-interceptor.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/interceptor/auth-interceptor.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/auth-interceptor.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/interceptor/auth-interceptor.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/auth/auth-service.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/auth/auth-service.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/auth/auth-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/auth/auth-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/bank-card/bankcard.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/bank-card/bankcard.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/bank-card/bankcard.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/bank-card/bankcard.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/beneficiary/beneficiary.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/beneficiary/beneficiary.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/beneficiary/beneficiary.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/beneficiary/beneficiary.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/transaction/transaction.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/transaction/transaction.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/transaction/transaction.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/transaction/transaction.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/user/user.service.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/user/user.service.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ebank-Frontend/src/app/service/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Ebank-Frontend/src/app/core/service/user/user.service.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2jJdkKfsKR5yscJfiBp1gypTIAN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;JUnit.AccountServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTest.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Spring Boot.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/OneDrive/Desktop/Ebank-Frontend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\user\\OneDrive\\Desktop\\E-Bank-Solution\\Ebank-Frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\OneDrive\Desktop\E-Bank-Solution\Ebank-Frontend\src\app\features" />
+      <recent name="C:\Users\user\OneDrive\Desktop\E-Bank-Solution\Ebank-Frontend\src\app\shared" />
+      <recent name="C:\Users\user\OneDrive\Desktop\E-Bank-Solution\Ebank-Frontend\src\app\core\service" />
+      <recent name="C:\Users\user\OneDrive\Desktop\E-Bank-Solution\Ebank-Frontend\src\app\core" />
+      <recent name="C:\Users\user\OneDrive\Desktop\E-Bank-Solution\Ebank-Frontend\src\app\core\model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Spring Boot">
+    <configuration name="AccountServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ebank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ebank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ebank" />
+      <option name="MAIN_CLASS_NAME" value="com.ebank.AccountServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccountServiceTest.closeAccount_shouldCloseAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ebank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ebank" />
+      <option name="MAIN_CLASS_NAME" value="com.ebank.AccountServiceTest" />
+      <option name="METHOD_NAME" value="closeAccount_shouldCloseAccount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ebank" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ebank.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ebank" />
+      <option name="MAIN_CLASS_NAME" value="com.ebank.UserServiceTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Spring Boot" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ebank" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ebank.EbankApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.AccountServiceTest" />
+      <item itemvalue="JUnit.AccountServiceTest.closeAccount_shouldCloseAccount" />
+      <item itemvalue="JUnit.UserServiceTest" />
+      <item itemvalue="Spring Boot.Spring Boot" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceTest" />
+        <item itemvalue="JUnit.AccountServiceTest" />
+        <item itemvalue="JUnit.AccountServiceTest.closeAccount_shouldCloseAccount" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8284f574-2722-4e85-a18e-259936c595a0" name="Changes" comment="" />
+      <created>1721109259553</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721109259553</updated>
+      <workItem from="1721109778622" duration="2572000" />
+      <workItem from="1721118405925" duration="13591000" />
+      <workItem from="1721203708615" duration="7654000" />
+      <workItem from="1721280809875" duration="1602000" />
+      <workItem from="1721290116731" duration="18392000" />
+      <workItem from="1721360196187" duration="1773000" />
+      <workItem from="1721376355058" duration="7975000" />
+      <workItem from="1721396903060" duration="3726000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -10,6 +10,9 @@ export class OverlayService {
   private visibilitySubject = new BehaviorSubject<boolean>(false);
   visibility$ = this.visibilitySubject.asObservable();
 
+  private dataChangedSubject = new Subject<void>();
+  dataChanged$ = this.dataChangedSubject.asObservable();
+
   private contentSubject = new BehaviorSubject<string | null>(null);
   content$ = this.contentSubject.asObservable();
 
@@ -25,7 +28,12 @@ export class OverlayService {
     }
   }
 
+  notifyDataChanged() {
+    this.dataChangedSubject.next();
+  }
+
   hide() {
     this.visibilitySubject.next(false);
+    this.notifyDataChanged();
   }
 }

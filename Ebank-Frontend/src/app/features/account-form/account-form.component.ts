@@ -42,6 +42,7 @@ export class AccountFormComponent implements OnInit {
     if (this.accountId) {
       this.loadAccount(this.accountId);
     }
+
   }
 
   loadAccount(accountId: number): void {
@@ -66,7 +67,7 @@ export class AccountFormComponent implements OnInit {
       this.accountService.updateAccount(this.accountId, accountData).subscribe({
         next: () => {
           this.overlayService.hide();
-          this.router.navigate(['/dashboard'], { state: { refresh: true } });
+          this.router.navigate(['/dashboard']);
          },
         error: (err) => console.error('Failed to update account', err),
         complete: () => console.log('Account update completed.'),
@@ -76,7 +77,7 @@ export class AccountFormComponent implements OnInit {
         next: () => {
           this.overlayService.hide();
           console.log('Account creation completed.');
-          this.router.navigate(['/dashboard'],{ state: { refresh: true } });
+          this.router.navigate(['/dashboard']);
         },
         error: (err) => console.error('Failed to create account', err),
         complete: () => console.log('Account creation completed.')

@@ -2,10 +2,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { AccountService } from "../../core/service/account/account.service";
 import { Account } from "../../core/model/account/account";
-import { AccountClosePopupComponent } from "../account-close-popup/account-close-popup.component";
 import { AccountType} from "../../core/enum/account-type";
 import {OverlayService} from "../../core/service/overlay/overlay.service";
 
@@ -24,12 +23,13 @@ export class AccountListComponent implements OnInit {
   accounts: Account[] = [];
   accountType = AccountType;
 
-  private dialogRef: MatDialogRef<AccountClosePopupComponent> | null = null;
-
   constructor(private overlayService: OverlayService, private accountService: AccountService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.loadAccounts();
+    this.overlayService.dataChanged$.subscribe(() => {
+      this.loadAccounts();
+    });
   }
 
   loadAccounts(): void {
@@ -37,24 +37,6 @@ export class AccountListComponent implements OnInit {
       next: (data) => this.accounts = data,
       error: (err) => console.error('Failed to load accounts', err),
       complete: () => console.log('Account loading completed.')
-    });
-  }
-
-  openCloseAccountDialog(accountId: number): void {
-    if (this.dialogRef) {
-      this.dialogRef.close();
-    }
-
-    this.dialogRef = this.dialog.open(AccountClosePopupComponent, {
-      data: { accountId }
-    });
-
-    this.dialogRef.afterClosed().subscribe(result => {
-      this.dialogRef = null;
-
-      if (result) {
-        this.loadAccounts();
-      }
     });
   }
 
@@ -72,4 +54,9 @@ export class AccountListComponent implements OnInit {
   openUpdateAccount(accountId: number) {
     this.overlayService.show('account-form', accountId);
   }
+
+  openCloseAccount(accountId: number) {
+    this.overlayService.show('account-close', accountId);
+  }
+
 }

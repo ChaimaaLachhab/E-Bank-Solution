@@ -31,12 +31,15 @@ public class Account {
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Transaction> transactions = new ArrayList<>();;
 
     @OneToMany(mappedBy = "account", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<BankCard> bankCards = new ArrayList<>();;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Beneficiary> beneficiaries = new ArrayList<>();;
 
 }

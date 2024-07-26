@@ -27,5 +27,6 @@ public class Beneficiary {
     private Account account;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Transaction> transactions;
 }

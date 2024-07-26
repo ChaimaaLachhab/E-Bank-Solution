@@ -1,0 +1,37 @@
+<div class="containerr">
+  <div class="signin-signup">
+    <form  [formGroup]="beneficiaryForm" (ngSubmit)="saveBeneficiary()" class="sign-in-form">
+      <h2 class="title">{{ beneficiaryId ? 'Edit Beneficiary' : 'Add Beneficiary' }}</h2>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Email" id="name" formControlName="name" required>
+      </div>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <input type="text" placeholder="Rib" id="rib" formControlName="rib" required>
+      </div>
+      <div class="input-field">
+        <i class="fas fa-user"></i>
+        <label for="bankName">Bank Name:</label>
+        <select id="bankName" formControlName="bankName" required>
+          <option *ngFor="let type of bankNames" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn" [disabled]="beneficiaryForm.invalid">{{ beneficiaryId ? 'Update' : 'Create' }}</button>
+    </form>
+    <div style="width: 350px;"></div>
+  </div>
+  <div class="panels-container">
+    <div style="width: 350px;"></div>
+    <div class="panel right-panel">
+      <div class="content">
+        <h3>New to Brand?</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?</p>
+      </div>
+      <img src="/assets/img/register.png" alt="Sign up" class="image">
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+

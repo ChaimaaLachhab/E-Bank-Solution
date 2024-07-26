@@ -4,6 +4,7 @@ import { Router, RouterOutlet } from '@angular/router';
 import { RegisterUserDto } from "../../core/dto/register-user.dto";
 import { LoginUserDto } from "../../core/dto/login-user.dto";
 import { FormsModule } from "@angular/forms";
+import {OverlayService} from "../../core/service/overlay/overlay.service";
 
 @Component({
   selector: 'app-sign',
@@ -25,7 +26,7 @@ export class SignComponent implements AfterViewInit {
   loginEmail: string = '';
   loginPassword: string = '';
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private overlayService: OverlayService, private authService: AuthService, private router: Router) {}
 
   ngAfterViewInit() {
     const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -57,6 +58,7 @@ export class SignComponent implements AfterViewInit {
       {
         next: (response) => {
           console.log('Registration successful:', response);
+          this.overlayService.hide();
           this.router.navigate(['/dashboard']);
         },
         error: (err) => {
@@ -77,6 +79,7 @@ export class SignComponent implements AfterViewInit {
           console.log('Login successful:', response);
           localStorage.setItem('token', response.token);
           console.log('Token expires in:', response.expiresIn);
+          this.overlayService.hide();
           this.router.navigate(['/dashboard']);
         },
         error: (err) => {

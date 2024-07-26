@@ -1,9 +1,9 @@
-import {Component, Inject, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog'; // Import for using MatDialogRef
 import { AccountService } from '../../core/service/account/account.service';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { OverlayService } from '../../core/service/overlay/overlay.service';
 
 @Component({
   selector: 'app-account-close-popup',
@@ -17,34 +17,36 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class AccountClosePopupComponent implements OnInit {
   closeAccountForm: FormGroup;
-  accountId: number;
+  accountId: number | null = null;
 
   constructor(
     private fb: FormBuilder,
     private accountService: AccountService,
-    private dialogRef: MatDialogRef<AccountClosePopupComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    private overlayService: OverlayService
   ) {
-    this.accountId = data.accountId;
     this.closeAccountForm = this.fb.group({
       reason: ['', Validators.required]
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.closeAccount();
+  }
 
   closeAccount(): void {
-    const reason = this.closeAccountForm.value.reason;
-    this.accountService.closeAccount(this.accountId, reason).subscribe({
-      next: () => {
-        this.dialogRef.close(true);
-      },
-      error: (err) => console.error('Failed to close account', err),
-      complete: () => console.log('Account closing completed.')
-    });
+    if (this.accountId !== null) {
+      const reason = this.closeAccountForm.value.reason;
+      this.accountService.closeAccount(this.accountId, reason).subscribe({
+        next: () => {
+          this.overlayService.hide();
+        },
+        error: (err) => console.error('Failed to close account', err),
+        complete: () => console.log('Account closing completed.')
+      });
+    }
   }
 
   onCancel(): void {
-    this.dialogRef.close(false);
+    this.overlayService.hide();
   }
 }

@@ -29,8 +29,8 @@ export class LoginComponent {
           console.log('Login successful:', response);
           localStorage.setItem('token', response.token);
           console.log('Token expires in:', response.expiresIn);
-          this.router.navigate(['/dashboard']);
           this.overlayService.hide();
+          this.router.navigate(['/dashboard']);
         },
         error: (err) => {
           console.error('Login failed:', err);
@@ -40,5 +40,9 @@ export class LoginComponent {
         }
       }
     );
+  }
+
+  openSignUp() {
+    this.overlayService.show('register');
   }
 }
